@@ -25,10 +25,10 @@ jobs:
          - uses: actions/checkout@v2
          - name: Whitespace Lint
            id: wslint
-           uses: NOAA-GFDL/simple-lint@v1
+           uses: NOAA-GFDL/simple_lint@v3
            with:
              failure: false
-             ftn_line_length: 120
+             ftn_line_len: 120
          - if: ! ${{ steps.wslint.outputs.lintSuccess }}
            run: exit 1
 ```
