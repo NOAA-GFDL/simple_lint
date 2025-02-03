@@ -48,11 +48,11 @@ fi
 # Prepare action output, and exit non-zero if requested to fail
 if test $ws_nfiles -gt 0 || test $ftab_nfiles -gt 0 || test $fllen_nfiles -gt 0
 then
-   echo "::set-output name=lintSuccess::false"
+   echo "lintSuccess=false" >> $GITHUB_OUTPUT
    if test "$INPUT_FAILURE" = "true"
    then
       exit 1
    fi
 else
-   echo "::set-output name=lintSuccess::true"
+   echo "lintSuccess=true" >> $GITHUB_OUTPUT
 fi
